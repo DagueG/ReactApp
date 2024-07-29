@@ -18,15 +18,10 @@ const ErrorSubtitle = styled.h2`
   color: ${colors.secondary};
 `
 
-const Illustration = styled.img`
-  max-width: 800px;
-`
-
 function Error() {
   return (
     <ErrorWrapper>
       <ErrorTitle>Oups...</ErrorTitle>
-      <Illustration src="https://github.com/atoulmet/assets/blob/master/404.svg?raw=true" />
       <ErrorSubtitle>
         Il semblerait que la page que vous cherchez n’existe pas
       </ErrorSubtitle>
