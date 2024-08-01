@@ -1,12 +1,13 @@
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import logements from '../../assets/logements.json' // Assurez-vous que le fichier JSON est placé dans le bon répertoire
 
 const CardsContainer = styled.div`
   display: grid;
   gap: 24px;
-  grid-template-rows: 350px 350px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 350px;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
 `
@@ -26,25 +27,6 @@ const PageSubtitle = styled.h2`
   padding-bottom: 30px;
 `
 
-const freelanceProfiles = [
-  {
-    name: 'Jane Doe',
-    jobTitle: 'Devops',
-  },
-  {
-    name: 'John Doe',
-    jobTitle: 'Developpeur frontend',
-  },
-  {
-    name: 'Jeanne Biche',
-    jobTitle: 'Développeuse Fullstack',
-  },
-  {
-    name: 'Jean Mich',
-    jobTitle: 'Boulanger Fullstack',
-  },
-]
-
 function Freelances() {
   return (
     <div>
@@ -53,11 +35,12 @@ function Freelances() {
         Chez Shiny nous réunissons les meilleurs profils pour vous.
       </PageSubtitle>
       <CardsContainer>
-        {freelanceProfiles.map((profile, index) => (
+        {logements.map((accommodation, index) => (
           <Card
-            key={`${profile.name}-${index}`}
-            label={profile.jobTitle}
-            title={profile.name}
+            key={`${accommodation.id}-${index}`}
+            ID_number={accommodation.id}
+            title={accommodation.title}
+            picture={accommodation.cover}
           />
         ))}
       </CardsContainer>

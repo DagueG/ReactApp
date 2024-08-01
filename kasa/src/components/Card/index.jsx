@@ -1,38 +1,40 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import DefaultPicture from '../../assets/profile.png'
-
-const CardLabel = styled.span`
-  color: #5843e4;
-  font-size: 22px;
-  font-weight: normal;
-  padding-left: 15px;
-`
 
 const CardTitle = styled.span`
-  color: black;
+  color: white;
   font-size: 22px;
   font-weight: normal;
-  align-self: center;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
 `
 
 const CardImage = styled.img`
-  height: 150px;
-  width: 150px;
-  align-self: center;
-  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
+  top: 0;
+  left: 0;
+
 `
 
 const CardWrapper = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 15px;
+  justify-content: center;
+  align-items: center;
   background-color: ${colors.backgroundLight};
   border-radius: 30px;
   width: 300px;
   height: 300px;
+  overflow: hidden;
   transition: 200ms;
   &:hover {
     cursor: pointer;
@@ -40,26 +42,25 @@ const CardWrapper = styled.div`
   }
 `
 
-function Card({ label, title, picture }) {
+function Card({ title, picture }) {
   return (
     <CardWrapper>
-      <CardLabel>{label}</CardLabel>
-      <CardImage src={picture} alt="freelance" />
+      <CardImage src={picture} alt="image fiche" />
       <CardTitle>{title}</CardTitle>
     </CardWrapper>
   )
 }
 
 Card.propTypes = {
-  label: PropTypes.string.isRequired,
+  ID_number: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
 }
 
 Card.defaultProps = {
-  label: '',
+  ID_number: '',
   title: '',
-  picture: DefaultPicture,
+  picture: 'https://via.placeholder.com/150', // Assuming you want to use a placeholder image if no picture is provided
 }
 
 export default Card
