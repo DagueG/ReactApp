@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/a_propos'
-import Fiches from './pages/Fiche_logement'
-import Header from './components/Header'
-import Error from './components/Error'
+import Home from './pages/Home/Home'
+import About from './pages/A_propos/A_propos'
+import Fiches from './pages/Fiche_logement/Fiche_logement'
+import Header from './components/Header/Header'
+import Error from './components/Error/Error'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
