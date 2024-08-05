@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types'
-import './Card.css'
+import PropTypes from 'prop-types';
+import './Card.css';
 
 function Card({ id, title, picture }) {
   return (
-    <a href={`/card/${id}`} className="link_card_logement"> {/* Modifiez l'URL selon vos besoins */}
+    <a href={`/fiche_logement/${id}`} className="link_card_logement">
       <article className="card-logement">
         <img src={picture} alt="fiche" />
         <div className="card-logement__layer">
@@ -11,20 +11,19 @@ function Card({ id, title, picture }) {
         </div>
       </article>
     </a>
-  )
+  );
 }
 
 Card.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
-}
+};
 
 Card.defaultProps = {
   id: '',
   title: '',
-  picture: 'https://via.placeholder.com/150', // Assuming you want to use a placeholder image if no picture is provided
-}
+  picture: 'https://via.placeholder.com/150',
+};
 
-export default Card
-
+export default Card;

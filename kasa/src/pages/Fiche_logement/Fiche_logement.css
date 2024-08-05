@@ -1,0 +1,68 @@
+.fiche-logement {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .fiche-logement h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .logement-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .logement-info {
+    margin-bottom: 20px;
+  }
+  
+  .logement-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .host, .rating, .tags, .equipments {
+    flex: 1 1 45%;
+  }
+  
+  .host img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .host h2, .rating h2, .tags h2, .equipments h2 {
+    margin-bottom: 10px;
+  }
+  
+  .tags ul, .equipments ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .tags li, .equipments li {
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
