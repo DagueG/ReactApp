@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Survey from './pages/Fiche_Logements'
-import Freelances from './pages/A_Propos'
+import About from './pages/a_propos'
+import Fiches from './pages/Fiche_logement'
 import Header from './components/Header'
 import Error from './components/Error'
 import { createGlobalStyle } from 'styled-components'
@@ -25,8 +25,8 @@ ReactDOM.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/survey/:questionNumber" element={<Survey />} />
-        <Route path="/freelances" element={<Freelances />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/fiches_logement" element={<Fiches />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>
