@@ -1,68 +1,126 @@
 .fiche-logement {
-    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
   }
   
-  .fiche-logement h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+  .logement-header {
+    text-align: center;
   }
   
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+  .logement-header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
   }
   
-  .gallery img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
+  .logement-header p {
+    color: gray;
   }
   
-  .logement-details {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .logement-gallery {
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
   }
   
-  .logement-info {
-    margin-bottom: 20px;
+  .logement-gallery img {
+    max-width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .gallery-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .gallery-button.left {
+    left: 10px;
+  }
+  
+  .gallery-button.right {
+    right: 10px;
+  }
+  
+  .image-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
   }
   
   .logement-meta {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
   }
   
-  .host, .rating, .tags, .equipments {
-    flex: 1 1 45%;
+  .host-info {
+    display: flex;
+    align-items: center;
   }
   
-  .host img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  .host-info p {
     margin-right: 10px;
   }
   
-  .host h2, .rating h2, .tags h2, .equipments h2 {
-    margin-bottom: 10px;
+  .host-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
   
-  .tags ul, .equipments ul {
-    list-style: none;
-    padding: 0;
+  .rating p {
+    color: #ff6b6b;
+    font-size: 1.5em;
   }
   
-  .tags li, .equipments li {
-    background-color: #f1f1f1;
+  .tags {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .tag {
+    background-color: #ff6b6b;
+    color: white;
     padding: 5px 10px;
-    margin: 5px 0;
     border-radius: 5px;
+  }
+  
+  .logement-details {
+    margin-top: 20px;
+  }
+  
+  .logement-section {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logement-section h2 {
+    margin: 0;
+  }
+  
+  .logement-section p,
+  .logement-section ul {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0 0 0;
   }
   

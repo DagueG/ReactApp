@@ -1,0 +1,30 @@
+.about-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-section {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  
+  .about-section-header {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .about-section-header h2 {
+    margin: 0;
+  }
+  
+  .about-section-content {
+    padding: 15px;
+    background-color: #fff;
+    transition: max-height 0.3s ease-out;
+  }
+  
