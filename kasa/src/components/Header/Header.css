@@ -1,0 +1,28 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navigation-section {
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+  }
+
+  .nav-header_link-home,
+  .nav-header_link-about {
+    font-size: 24px; 
+    color: #000000;
+    text-decoration: none;
+    padding-left: 0.8rem;
+  }
+
+  .nav-header_link-home:hover,
+  .nav-header_link-home:focus,
+  .nav-header_link-about:hover,
+  .nav-header_link-about:focus {
+    text-decoration-line: underline;
+  }
+  

@@ -4,7 +4,6 @@ import './Home.css'
 
 function Home() {
   return (
-    <div>
       <div className="cards-container">
         {logements.map((accommodation, index) => (
           <Card
@@ -14,9 +13,8 @@ function Home() {
             picture={accommodation.cover}
           />
         ))}
-      </div>
-    </div>
-  )
+      </div> 
+    )
 }
 
 export default Home
