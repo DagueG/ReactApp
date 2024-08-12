@@ -4,6 +4,12 @@ import './Home.css'
 
 function Home() {
   return (
+    <div className="home-container">
+      <div className="banner-container">
+        <div className="banner-text-container">
+          <div className="banner-text">Chez vous, partout et ailleurs</div>
+        </div>
+      </div>
       <div className="cards-container">
         {logements.map((accommodation, index) => (
           <Card
@@ -14,6 +20,7 @@ function Home() {
           />
         ))}
       </div> 
+    </div>
     )
 }
 

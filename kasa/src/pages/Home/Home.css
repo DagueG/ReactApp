@@ -1,10 +1,43 @@
 .cards-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-    margin: 22px 0;
-    flex-wrap: wrap;
-  
-  }
-  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.banner-container {
+  position: relative;
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  padding: 4.5rem 0;
+  margin: auto;
+  overflow: hidden;
+  background: url('../../assets/background-banner.jpeg') no-repeat center center;
+  background-size: cover;
+}
+
+.banner-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.banner-text-container {
+  position: relative;
+  z-index: 2;
+  font-family: Montserrat;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: left;
+  color: #FFFFFF;
+}
