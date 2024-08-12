@@ -1,28 +1,26 @@
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-  
-  .navigation-section {
-    display: flex;
-    justify-content: flex-end;
-    text-transform: uppercase;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 6rem;
+}
 
-  .nav-header_link-home,
-  .nav-header_link-about {
-    font-size: 24px; 
-    color: #000000;
-    text-decoration: none;
-    padding-left: 0.8rem;
-  }
+.navigation-section {
+  display: flex;
+  text-transform: uppercase;
+  gap: 2.5rem;
+}
 
-  .nav-header_link-home:hover,
-  .nav-header_link-home:focus,
-  .nav-header_link-about:hover,
-  .nav-header_link-about:focus {
-    text-decoration-line: underline;
-  }
-  
+.nav-header_link-home,
+.nav-header_link-about {
+  font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-header_link-home:hover,
+.nav-header_link-home:focus,
+.nav-header_link-about:hover,
+.nav-header_link-about:focus {
+  text-decoration-line: underline;
+}

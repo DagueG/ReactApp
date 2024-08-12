@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import logements from '../../assets/logements.json';
-import './Fiche_logement.css'; // Assurez-vous de créer un fichier CSS pour les styles spécifiques
+import './Fiche_logement.css';
 
 function FicheLogement() {
   const { id } = useParams();
