@@ -32,11 +32,6 @@ function FicheLogement() {
 
   return (
     <div className="fiche-logement">
-      <header className="logement-header">
-        <h1>{logement.title}</h1>
-        <p>{logement.location}</p>
-      </header>
-
       <div className="logement-gallery">
         <button className="gallery-button left" onClick={handlePreviousImage}>❮</button>
         <img 
@@ -46,19 +41,25 @@ function FicheLogement() {
         <button className="gallery-button right" onClick={handleNextImage}>❯</button>
         <span className="image-counter">{currentImageIndex + 1}/{logement.pictures.length}</span>
       </div>
-
-      <div className="logement-meta">
+      <div className="logement-header">
+        <div className="logement-title">
+          <h1>{logement.title}</h1>
+          <p>{logement.location}</p>
+        </div>
         <div className="host-info">
           <p>{logement.host.name}</p>
           <img src={logement.host.picture} alt={logement.host.name} />
         </div>
-        <div className="rating">
-          <p>{'⭐'.repeat(logement.rating)}</p>
-        </div>
+      </div>
+
+      <div className="logement-meta">
         <div className="tags">
           {logement.tags.map((tag, index) => (
             <span key={index} className="tag">{tag}</span>
           ))}
+        </div>
+        <div className="rating">
+          <p>{'⭐'.repeat(logement.rating)}</p>
         </div>
       </div>
 

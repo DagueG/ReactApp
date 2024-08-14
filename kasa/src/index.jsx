@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/A_propos/A_propos';
 import FicheLogement from './pages/Fiche_logement/Fiche_logement';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Error from './components/Error/Error';
 import './utils/style/index.css'
 
@@ -21,6 +22,7 @@ root.render(
         <Route path="/fiche_logement/:id" element={<FicheLogement />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   </React.StrictMode>
 );

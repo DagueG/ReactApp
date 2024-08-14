@@ -5,7 +5,9 @@
   }
   
   .logement-header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Facultatif, aligne les enfants verticalement au centre */
   }
   
   .logement-header h1 {
@@ -24,9 +26,14 @@
   }
   
   .logement-gallery img {
-    max-width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 415px;
+    width: 100%;
     border-radius: 10px;
     cursor: pointer;
+    object-fit: cover;
   }
   
   .gallery-button {
@@ -100,6 +107,9 @@
   
   .logement-details {
     margin-top: 20px;
+    display: flex;
+    align-items: center; /* Facultatif, aligne les enfants verticalement au centre */
+    gap: 5%; /* Espace entre les deux enfants */
   }
   
   .logement-section {
@@ -109,6 +119,7 @@
     margin-bottom: 10px;
     border-radius: 5px;
     cursor: pointer;
+    flex: 1;
   }
   
   .logement-section h2 {
