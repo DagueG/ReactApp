@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import logements from '../../assets/logements.json';
 import './Fiche_logement.css';
+import arrow_left from '../../assets/vector-left.svg';
+import arrow_right from '../../assets/vector-right.svg';
+import emptyStar from "../../assets/star_empty.svg";
+import fullStar from "../../assets/star.svg";
 
 function FicheLogement() {
   const { id } = useParams();
@@ -23,22 +27,40 @@ function FicheLogement() {
   };
 
   const toggleSection = (section) => {
-    if (openSections.includes(section)) {
-      setOpenSections(openSections.filter((sec) => sec !== section));
-    } else {
-      setOpenSections([...openSections, section]);
+    setOpenSections(openSections.includes(section) ? openSections.filter(sec => sec !== section) : [...openSections, section]);
+  };
+
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <img
+          key={i}
+          src={i < logement.rating ? fullStar : emptyStar}
+          alt={i < logement.rating ? "Full Star" : "Empty Star"}
+        />
+      );
     }
+    return stars;
   };
 
   return (
     <div className="fiche-logement">
       <div className="logement-gallery">
-        <button className="gallery-button left" onClick={handlePreviousImage}>❮</button>
         <img 
           src={logement.pictures[currentImageIndex]} 
           alt={`${logement.title} ${currentImageIndex + 1}`} 
         />
-        <button className="gallery-button right" onClick={handleNextImage}>❯</button>
+        {logement.pictures.length > 1 && (
+          <>
+            <button className="gallery-button left" onClick={handlePreviousImage}>
+              <img src={arrow_left} alt="Précédent" />
+            </button>
+            <button className="gallery-button right" onClick={handleNextImage}>
+              <img src={arrow_right} alt="Suivant" />
+            </button>
+          </>
+        )}
         <span className="image-counter">{currentImageIndex + 1}/{logement.pictures.length}</span>
       </div>
       <div className="logement-header">
@@ -59,7 +81,7 @@ function FicheLogement() {
           ))}
         </div>
         <div className="rating">
-          <p>{'⭐'.repeat(logement.rating)}</p>
+          {renderStars()}
         </div>
       </div>
 
