@@ -156,13 +156,14 @@
   cursor: pointer;
   flex: 1;
   border-radius: 5px;
-  max-height: 0px;
-  transition: max-height 1s ease-in-out;
+  height: auto;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 
 .logement-section.open  {
-  max-height: 500px;
+  height: auto;
   background-color: #F6F6F673;
 }
 

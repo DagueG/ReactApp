@@ -87,20 +87,20 @@ function FicheLogement() {
       </div>
 
       <div className="logement-details">
-      <div className={`logement-section ${openSections.includes('description') ? 'open' : ''}`} onClick={() => toggleSection('description')}>
-  <h2>Description <img src={arrow_up} alt="Toggle description" className={`arrow ${openSections.includes('description') ? 'open' : ''}`} /></h2>
-  {openSections.includes('description') && <p>{logement.description}</p>}
-</div>
-<div className={`logement-section ${openSections.includes('equipments') ? 'open' : ''}`} onClick={() => toggleSection('equipments')}>
-  <h2>Équipements <img src={arrow_up} alt="Toggle equipments" className={`arrow ${openSections.includes('equipments') ? 'open' : ''}`} /></h2>
-  {openSections.includes('equipments') && (
-    <ul>
-      {logement.equipments.map((equipment, index) => (
-        <li key={index}>{equipment}</li>
-      ))}
-    </ul>
-  )}
-</div>
+        <div className={`logement-section ${openSections.includes('description') ? 'open' : ''}`} onClick={() => toggleSection('description')}>
+          <h2>Description <img src={arrow_up} alt="Toggle description" className={`arrow ${openSections.includes('description') ? 'open' : ''}`} /></h2>
+          {openSections.includes('description') && <p>{logement.description}</p>}
+        </div>
+        <div className={`logement-section ${openSections.includes('equipments') ? 'open' : ''}`} onClick={() => toggleSection('equipments')}>
+          <h2>Équipements <img src={arrow_up} alt="Toggle equipments" className={`arrow ${openSections.includes('equipments') ? 'open' : ''}`} /></h2>
+          {openSections.includes('equipments') && (
+            <ul>
+              {logement.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );
