@@ -1,8 +1,10 @@
 .header-container {
+  width: 90%; /* Matches the width of the banner */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 6rem;
+  margin: auto;
+  padding: 2em 0em;
 }
 
 .navigation-section {

@@ -203,3 +203,19 @@
 .arrow.open {
   transform: rotate(-180deg);
 }
+
+.logement-section p,
+.logement-section ul li {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.67px;
+  text-align: left;
+  margin: 0;
+}
+
+.logement-section ul {
+  list-style-type: none; 
+  padding-left: 0;
+  margin: 0;
+}
