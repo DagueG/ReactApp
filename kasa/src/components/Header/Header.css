@@ -7,13 +7,15 @@
 
 .navigation-section {
   display: flex;
-  text-transform: uppercase;
   gap: 2.5rem;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
 }
 
 .nav-header_link-home,
 .nav-header_link-about {
-  font-size: 1.5rem;
   color: #000000;
   text-decoration: none;
 }

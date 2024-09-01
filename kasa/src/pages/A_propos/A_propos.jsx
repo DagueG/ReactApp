@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './A_propos.css';
+import arrow_up from "../../assets/vector-up.svg";
 
 const sections = [
   {
@@ -22,29 +23,48 @@ const sections = [
 
 function About() {
   const [openSections, setOpenSections] = useState([]);
+  const contentRefs = useRef([]);
 
   const toggleSection = (index) => {
-    if (openSections.includes(index)) {
-      setOpenSections(openSections.filter((i) => i !== index));
-    } else {
-      setOpenSections([...openSections, index]);
-    }
+    setOpenSections((prevOpenSections) => {
+      const newOpenSections = prevOpenSections.includes(index)
+        ? prevOpenSections.filter((i) => i !== index)
+        : [...prevOpenSections, index];
+
+      const element = contentRefs.current[index];
+
+      if (newOpenSections.includes(index)) {
+        element.style.maxHeight = element.scrollHeight + "px";
+      } else {
+        element.style.maxHeight = element.scrollHeight + "px"; // Set to current height
+        requestAnimationFrame(() => {
+          element.style.maxHeight = "0px"; // Then collapse
+        });
+      }
+
+      return newOpenSections;
+    });
   };
 
   return (
-    <div className="about-container">
-      {sections.map((section, index) => (
-        <div key={index} className="about-section">
-          <div className="about-section-header" onClick={() => toggleSection(index)}>
-            <h2>{section.title}</h2>
-          </div>
-          {openSections.includes(index) && (
-            <div className="about-section-content">
-              {section.content}
+    <div className="about-page">
+      <div className="banner-about"></div>
+      <div className="about-container">
+        {sections.map((section, index) => (
+          <div key={index} className={`about-section ${openSections.includes(index) ? 'open' : ''}`}>
+            <div className="about-section-header" onClick={() => toggleSection(index)}>
+              <h2>{section.title}</h2>
+              <img src={arrow_up} alt="Toggle section" className={`arrow ${openSections.includes(index) ? 'open' : ''}`} />
             </div>
-          )}
-        </div>
-      ))}
+            <div
+              ref={(el) => (contentRefs.current[index] = el)}
+              className={`about-section-content ${openSections.includes(index) ? 'open' : ''}`}
+            >
+              <p>{section.content}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

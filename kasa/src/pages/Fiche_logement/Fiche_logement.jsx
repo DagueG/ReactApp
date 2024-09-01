@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import logements from '../../assets/logements.json';
 import './Fiche_logement.css';
@@ -14,6 +14,7 @@ function FicheLogement() {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [openSections, setOpenSections] = useState([]);
+  const contentRefs = useRef([]);
 
   if (!logement) {
     return <div>Logement non trouvé</div>;
@@ -27,8 +28,25 @@ function FicheLogement() {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + logement.pictures.length) % logement.pictures.length);
   };
 
-  const toggleSection = (section) => {
-    setOpenSections(openSections.includes(section) ? openSections.filter(sec => sec !== section) : [...openSections, section]);
+  const toggleSection = (index) => {
+    setOpenSections((prevOpenSections) => {
+      const newOpenSections = prevOpenSections.includes(index)
+        ? prevOpenSections.filter((i) => i !== index)
+        : [...prevOpenSections, index];
+
+      const element = contentRefs.current[index];
+
+      if (newOpenSections.includes(index)) {
+        element.style.maxHeight = element.scrollHeight + "px";
+      } else {
+        element.style.maxHeight = element.scrollHeight + "px"; // Set to current height
+        requestAnimationFrame(() => {
+          element.style.maxHeight = "0px"; // Then collapse
+        });
+      }
+
+      return newOpenSections;
+    });
   };
 
   const renderStars = () => {
@@ -87,19 +105,33 @@ function FicheLogement() {
       </div>
 
       <div className="logement-details">
-        <div className={`logement-section ${openSections.includes('description') ? 'open' : ''}`} onClick={() => toggleSection('description')}>
-          <h2>Description <img src={arrow_up} alt="Toggle description" className={`arrow ${openSections.includes('description') ? 'open' : ''}`} /></h2>
-          {openSections.includes('description') && <p>{logement.description}</p>}
+        <div
+          className={`logement-section ${openSections.includes(0) ? 'open' : ''}`}
+          onClick={() => toggleSection(0)}
+        >
+          <h2>Description <img src={arrow_up} alt="Toggle description" className={`arrow ${openSections.includes(0) ? 'open' : ''}`} /></h2>
+          <div
+            ref={(el) => (contentRefs.current[0] = el)}
+            className={`logement-section-content ${openSections.includes(0) ? 'open' : ''}`}
+          >
+            <p>{logement.description}</p>
+          </div>
         </div>
-        <div className={`logement-section ${openSections.includes('equipments') ? 'open' : ''}`} onClick={() => toggleSection('equipments')}>
-          <h2>Équipements <img src={arrow_up} alt="Toggle equipments" className={`arrow ${openSections.includes('equipments') ? 'open' : ''}`} /></h2>
-          {openSections.includes('equipments') && (
+        <div
+          className={`logement-section ${openSections.includes(1) ? 'open' : ''}`}
+          onClick={() => toggleSection(1)}
+        >
+          <h2>Équipements <img src={arrow_up} alt="Toggle equipments" className={`arrow ${openSections.includes(1) ? 'open' : ''}`} /></h2>
+          <div
+            ref={(el) => (contentRefs.current[1] = el)}
+            className={`logement-section-content ${openSections.includes(1) ? 'open' : ''}`}
+          >
             <ul>
               {logement.equipments.map((equipment, index) => (
                 <li key={index}>{equipment}</li>
               ))}
             </ul>
-          )}
+          </div>
         </div>
       </div>
     </div>
