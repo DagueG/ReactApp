@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
 .cards-container {
   display: flex;
   justify-content: center;
@@ -8,14 +10,14 @@
 }
 
 .banner-container {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Légère ombre ajoutée */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: relative;
-  border-radius: 1.25rem;
+  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
-  padding: 4.5rem 0;
+  height: 223px;
   margin: auto;
   overflow: hidden;
   background: url('../../assets/background-banner.jpeg') no-repeat center center;
@@ -34,11 +36,29 @@
 }
 
 .banner-text-container {
+  width: 90%;
   position: relative;
   z-index: 2;
   font-family: Montserrat;
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 700;
   text-align: left;
   color: #FFFFFF;
+}
+
+@media screen and (max-width: 375px) {
+  .banner-text-container {
+    font-size: 24px;
+    width: 73%;
+  }
+  .banner-container {
+    height: 111px;
+    padding: 0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 335px;
+  }
+  .cards-container {
+    gap: 20px;
+  }
 }

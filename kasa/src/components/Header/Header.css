@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
 .header-container {
-  width: 90%; /* Matches the width of the banner */
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +16,8 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 34.22px;
+  white-space: nowrap;
+
 }
 
 .nav-header_link-home,
@@ -27,4 +31,21 @@
 .nav-header_link-about:hover,
 .nav-header_link-about:focus {
   text-decoration-line: underline;
+}
+
+@media screen and (max-width: 375px) {
+  .home-logo {
+      width: 145px;
+  }
+  .navigation-section {
+    font-size: 12px;
+    line-height: 17.11px;
+    text-transform: uppercase;
+    gap: unset;
+    width: 100%;
+  }
+  .nav-header_link-home,
+  .nav-header_link-about {
+    margin-left: auto;
+  }
 }

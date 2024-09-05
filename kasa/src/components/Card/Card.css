@@ -1,10 +1,7 @@
   .card-logement {
     position: relative;
     display: flex;
-    width: 335px;
-    height: 255px;
     border-radius: 8px;
-    min-width: 335px;
     transition: transform 1s;
     width: 340px;
     height: 340px;
@@ -38,7 +35,8 @@
     align-items: flex-end;
     position: absolute;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
+    line-height: 25px;
     color: #f1f1f1;
     left: 5.88%;
     right: 5.88%;
@@ -55,13 +53,22 @@
     margin: 22px 0;
     flex-wrap: wrap;
     gap: 50px;
-      padding: 5% 1%;
-      background-color: #f7f7f7;
-      border-radius: 16px;
-      margin: 43px 0;
-    }
+    background-color: #f7f7f7;
+    border-radius: 16px;
+    margin: 43px 0;
+  }
   
   .link_card_logement {
     text-decoration: none;
+    justify-content: center;
+    display: flex;
   }
   
+  @media screen and (max-width: 375px) {
+    .card-logement {
+      width: 100%;
+      max-width: 335px;
+      height: 255px;
+      line-height: 25px;
+    }
+  }
