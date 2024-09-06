@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 .fiche-logement {
-  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
+  margin-bottom: 20px;
   padding: 20px;
+  padding-top: 0;
 }
 
 .logement-header {
@@ -13,25 +15,23 @@
 }
 
 .logement-header h1 {
-  font-family: Montserrat;
   font-size: 36px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin: 0px;
   color: #FF6060;
 }
 
 .logement-header p {
-  font-family: Montserrat;
-  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 500;
-  line-height: 25.67px;
   text-align: left;
 }
 
 .logement-gallery {
   position: relative;
-  margin: 20px 0;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -42,7 +42,6 @@
   height: 415px;
   width: 100%;
   border-radius: 10px;
-  cursor: pointer;
   object-fit: cover;
 }
 
@@ -59,6 +58,7 @@
 .gallery-button img {
   width: 47px;
   height: 79px;
+  cursor: pointer;
 }
 
 .gallery-button.left {
@@ -70,13 +70,12 @@
 }
 
 .rating {
-  width: 196px;
-  height: 36px;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
+
 }
 
-.rating img {
+.host-info .rating img {
   width: 24px;
   height: 24px;
   margin: 6px;
@@ -92,25 +91,24 @@
   border-radius: 5px;
 }
 
-.logement-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
-}
-
 .host-info {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
+.host-ident {
+  display: flex;
+  align-items: center;
+} 
+
 .host-info p {
+  margin: 0;
   margin-right: 10px;
   text-align: right;
   font-size: 18px;
   font-weight: 500;
   color: #FF6060;
-  font-style: Montserrat;
 }
 
 .host-info img {
@@ -119,14 +117,10 @@
   border-radius: 50%;
 }
 
-.rating p {
-  color: #ff6b6b;
-  font-size: 1.5em;
-}
-
 .tags {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -141,6 +135,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .logement-details {
@@ -170,7 +165,6 @@
   background-color: #ff6b6b;
   padding: 10px;
   border-radius: 10px;
-  color: white;
   z-index: 2;
   position: relative;
   margin: 0;
@@ -208,10 +202,8 @@
 
 .logement-section p,
 .logement-section ul li {
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 400;
-  line-height: 25.67px;
   text-align: left;
   margin: 0;
 }
@@ -220,4 +212,58 @@
   list-style-type: none; 
   padding-left: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 520px) {
+  .logement-gallery img {
+    height: 255px;
+  }
+  .gallery-button img {
+    width: 11px;
+    height: 19px;
+  }
+  .logement-header h1 {
+    font-size: 18px;
+  }
+  .logement-header p {
+    font-size: 14px;
+  }
+  .logement-header {
+    flex-direction: column;
+    align-items: unset;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 10px;
+  }
+  .host-info {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .rating {
+    margin: auto 0;
+  }
+  .host-info .rating img {
+    height: 13px;
+    width: 13px;
+    margin: 2px;
+  }
+  .host-ident img {
+    width: 32px;
+    height: 32px;
+  }
+  .logement-details {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .logement-section h2{
+    font-size: 13px;
+  }
+  .arrow {
+    height: 16px;
+    width: 16px;
+  }
+  .logement-section p, .logement-section ul li {
+    font-size: 12px;
+  }
 }

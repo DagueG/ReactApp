@@ -47,15 +47,13 @@
   .cards-container {
     display: flex;
     justify-content: center;
-    width: 100%;
-    gap: 20px;
     border-radius: 8px;
-    margin: 22px 0;
     flex-wrap: wrap;
     gap: 50px;
     background-color: #f7f7f7;
     border-radius: 16px;
-    margin: 43px 0;
+    margin: 43px 5%;
+    padding: 50px;
   }
   
   .link_card_logement {
@@ -64,11 +62,16 @@
     display: flex;
   }
   
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 520px) {
     .card-logement {
       width: 100%;
       max-width: 335px;
       height: 255px;
       line-height: 25px;
     }
+    .cards-container {
+      gap: 20px;
+      margin: 20px 0%;
+      padding: 0px;  
+    }  
   }

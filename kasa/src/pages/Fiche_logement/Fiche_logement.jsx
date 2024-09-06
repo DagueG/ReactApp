@@ -86,21 +86,20 @@ function FicheLogement() {
         <div className="logement-title">
           <h1>{logement.title}</h1>
           <p>{logement.location}</p>
+          <div className="tags">
+            {logement.tags.map((tag, index) => (
+              <span key={index} className="tag">{tag}</span>
+            ))}
+          </div>
         </div>
         <div className="host-info">
-          <p>{logement.host.name}</p>
-          <img src={logement.host.picture} alt={logement.host.name} />
-        </div>
-      </div>
-
-      <div className="logement-meta">
-        <div className="tags">
-          {logement.tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
-          ))}
-        </div>
-        <div className="rating">
-          {renderStars()}
+          <div className="host-ident">
+            <p>{logement.host.name}</p>
+            <img src={logement.host.picture} alt={logement.host.name} />
+          </div>
+          <div className="rating">
+            {renderStars()}
+          </div>
         </div>
       </div>
 
