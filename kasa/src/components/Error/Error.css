@@ -33,3 +33,26 @@
   text-align: left;
   color: #000000;
   }
+
+  @media screen and (max-width: 580px) {
+    .error-code {
+      font-size: 96px;
+      line-height: 136.9px;
+    }
+    .error-message {
+      font-size: 18px;
+      line-height: 25.67px;
+      text-align: center;
+    }
+    .error-container {
+      width: 70%;
+      margin: auto;
+      gap: 110px;
+      padding-top: 50px;
+      padding-bottom: 110px;
+    }
+    .nav-error-link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
