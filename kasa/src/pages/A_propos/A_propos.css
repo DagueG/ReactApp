@@ -104,3 +104,14 @@
 .arrow.open {
   transform: rotate(-180deg);
 }
+
+@media screen and (max-width: 520px) {
+  .banner-about {
+    height: 110px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+  }
+  .about-container {
+    width: 90%;
+  }
+}
