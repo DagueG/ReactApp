@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-
 .home-container {
   justify-content: center;
   flex: 1;
@@ -36,7 +34,7 @@
   z-index: 2;
   font-size: 48px;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   color: #FFFFFF;
 }
 
@@ -44,6 +42,7 @@
   .banner-text-container {
     font-size: 24px;
     width: 73%;
+    text-align: left;
   }
   .banner-container {
     height: 111px;
