@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
+import ToggleSection from '../../components/Section/ToggleSection';
 import './A_propos.css';
-import arrow_up from "../../assets/vector-up.svg";
 
 const sections = [
   {
@@ -17,52 +17,21 @@ const sections = [
   },
   {
     title: 'Sécurité',
-    content: 'La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l\'hôte qu\'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.'
+    content: 'La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services.'
   }
 ];
 
 function About() {
-  const [openSections, setOpenSections] = useState([]);
-  const contentRefs = useRef([]);
-
-  const toggleSection = (index) => {
-    setOpenSections((prevOpenSections) => {
-      const newOpenSections = prevOpenSections.includes(index)
-        ? prevOpenSections.filter((i) => i !== index)
-        : [...prevOpenSections, index];
-
-      const element = contentRefs.current[index];
-
-      if (newOpenSections.includes(index)) {
-        element.style.maxHeight = element.scrollHeight + "px";
-      } else {
-        element.style.maxHeight = element.scrollHeight + "px";
-        requestAnimationFrame(() => {
-          element.style.maxHeight = "0px"; 
-        });
-      }
-
-      return newOpenSections;
-    });
-  };
-
   return (
     <div className="about-page">
       <div className="banner-about"></div>
       <div className="about-container">
         {sections.map((section, index) => (
-          <div key={index} className={`about-section ${openSections.includes(index) ? 'open' : ''}`}>
-            <div className="about-section-header" onClick={() => toggleSection(index)}>
-              <h2>{section.title}</h2>
-              <img src={arrow_up} alt="Toggle section" className={`arrow ${openSections.includes(index) ? 'open' : ''}`} />
-            </div>
-            <div
-              ref={(el) => (contentRefs.current[index] = el)}
-              className={`about-section-content ${openSections.includes(index) ? 'open' : ''}`}
-            >
-              <p>{section.content}</p>
-            </div>
-          </div>
+          <ToggleSection
+            key={index}
+            title={section.title}
+            content={section.content}
+          />
         ))}
       </div>
     </div>
