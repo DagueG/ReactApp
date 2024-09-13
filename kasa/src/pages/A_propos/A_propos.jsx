@@ -36,9 +36,9 @@ function About() {
       if (newOpenSections.includes(index)) {
         element.style.maxHeight = element.scrollHeight + "px";
       } else {
-        element.style.maxHeight = element.scrollHeight + "px"; // Set to current height
+        element.style.maxHeight = element.scrollHeight + "px";
         requestAnimationFrame(() => {
-          element.style.maxHeight = "0px"; // Then collapse
+          element.style.maxHeight = "0px"; 
         });
       }
 

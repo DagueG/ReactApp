@@ -33,18 +33,6 @@ function FicheLogement() {
       const newOpenSections = prevOpenSections.includes(index)
         ? prevOpenSections.filter((i) => i !== index)
         : [...prevOpenSections, index];
-
-      const element = contentRefs.current[index];
-
-      if (newOpenSections.includes(index)) {
-        element.style.maxHeight = element.scrollHeight + "px";
-      } else {
-        element.style.maxHeight = element.scrollHeight + "px"; // Set to current height
-        requestAnimationFrame(() => {
-          element.style.maxHeight = "0px"; // Then collapse
-        });
-      }
-
       return newOpenSections;
     });
   };

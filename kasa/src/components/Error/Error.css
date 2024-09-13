@@ -7,6 +7,7 @@
   text-align: center;
   gap: 70px;
   padding-bottom: 50px;
+  flex: 1;
 }
 
 .error-code {

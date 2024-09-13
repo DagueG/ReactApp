@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
+.about-page {
+  flex: 1;
+}
+
 .about-container {
   padding: 20px;
   width: 70%;
@@ -114,4 +118,12 @@
   .about-container {
     width: 90%;
   }
+.about-section p,
+.about-section ul li {
+  font-size: 12px;
+  line-height: unset;
+}
+.about-section-header h2 {
+  font-size: 13px;
+}
 }
